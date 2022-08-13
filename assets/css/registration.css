@@ -1,0 +1,139 @@
+/* registration */
+
+
+
+
+.containerr{
+  margin-left: 80px;
+  
+  max-width: 90;
+  width: 90%;
+  background-color: rgb(242, 242, 242);
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.containerr .title{
+  font-size: 50px;
+  font-weight: 500;
+  position: relative;
+  text-align: center;
+}
+.containerr .title::before{
+  content: "";
+  position:relative;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #ed8e5b, #f8f8f8);
+}
+.content form .user-detailss{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-detailss .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.detailss{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-detailss .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-detailss .input-box input:focus,
+.user-detailss .input-box input:valid{
+  border-color: #f5f2f6;
+}
+ form .gender-detailss .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .categoryy{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .categoryy label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .categoryy label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #beb5b5;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .categoryy label .one,
+ #dot-2:checked ~ .categoryy label .two,
+ #dot-3:checked ~ .categoryy label .three{
+   background: #111111;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: rgb(21, 20, 20);
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #f8f3fa);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #c8462c, #fdf8ff);
+  }
+ @media(max-width: 584px){
+ .containerr{
+  max-width: 100%;
+}
+form .user-detailss .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .categoryy{
+    width: 100%;
+  }
+  .content form .user-detailss{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-detailss::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .containerr .content .categoryy{
+    flex-direction: column;
+  }
+}
