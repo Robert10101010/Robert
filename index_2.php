@@ -55,15 +55,11 @@
 	    c3,0,5.7-1.1,7.7-2.9l0.5,0.5v1.4l9.1,9.1l2.7-2.7L22.9,20.1z M11.9,20.1c-4.5,0-8.2-3.7-8.2-8.2s3.7-8.2,8.2-8.2s8.2,3.7,8.2,8.2
 	    S16.4,20.1,11.9,20.1z"/>
     </g>
-
     <g id="planner">
       <path onclick="location.href='assets/php/index.php'" fill="#90A4AE" d="M28.4,3.6h-1.8V0h-3.6v3.6H8.9V0H5.3v3.6H3.6C1.6,3.6,0,5.1,0,7.1L0,32c0,2,1.6,3.6,3.6,3.6h24.9c2,0,3.6-1.6,3.6-3.6V7.1C32,5.1,30.4,3.6,28.4,3.6z M28.4,32H3.6V12.4h24.9V32z M7.1,16H16v8.9H7.1V16z"/>
     </g>
-
   </defs>
 </svg>
-
-
 <nav class="nav__cont">
   <ul class="nav">
     <li class="nav__items ">
@@ -82,34 +78,25 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 35.6">
         <use xlink:href="#planner"></use></svg>
       <a onclick="location.href='assets/php/index.php'">Log in</a>
-    </li>  
+    </li> 
   </ul>
 </nav>
-
-
-
     <!-- ***** Main Banner Area Start ***** -->
     <div class="main-banner" id="top">
         <video autoplay muted loop id="bg-video">
             <source src="assets/images/gym-video.mp4" type="video/mp4" />
         </video>
-       
         <div class="video-overlay header-text">
-        
             <div class="caption">
                 <h6>work harder, get stronger</h6>
                 <h2>easy with our <em>gym</em></h2>
                 <div class="main-button scroll-to-section">
                     <a href="#features">Become a member</a>
                 </div>
-                
             </div>
         </div>
     </div>
     <!-- ***** Main Banner Area End ***** -->
-
-
-
     <!-- ***** Features Item Start ***** -->
     <section class="section" id="features">
         <div class="container">
@@ -386,9 +373,6 @@
   }
 </style>
 <div id="map-canvas"></div>
-<input type="button" id="start" value="Click">
-<p>Drag the circle, drag the markers; when you click the button it will calculate if the markers are in the circle</p>
-
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?"></script>
 <script>
   function initialize() {
