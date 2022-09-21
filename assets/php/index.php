@@ -1,56 +1,84 @@
-<?php
-include "config.php";
+<?php 
 
+include 'config.php';
 
-if(isset($_POST['but_submit'])){
+session_start();
 
-    $uname = mysqli_real_escape_string($con,$_POST['txt_uname']);
-    $password = mysqli_real_escape_string($con,$_POST['txt_pwd']);
+error_reporting(0);
 
-
-    if ($uname != "" && $password != ""){
-
-        $sql_query = "select count(*) as cntUser from users where username='".$uname."' and password='".$password."'";
-        $result = mysqli_query($con,$sql_query);
-        $row = mysqli_fetch_array($result);
-
-        $count = $row['cntUser'];
-
-        if($count > 0){
-            $_SESSION['uname'] = $uname;
-            header('Location: home.php');
-        }else{
-            echo "Invalid username and password";
-        }
-
-    }
-
+if (isset($_SESSION['username'])) {
+    header("Location: welcome.php");
 }
-?>
-<html>
-    <head>
-        <link href="style1.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="container">
-            <form method="post" action="">
-                <div id="div_login">
-                    <h1>Login</h1>
-                    <div>
-                        <input type="text" class="textbox" id="txt_uname" name="txt_uname" placeholder="Username" />
-                    </div>
-                    <div>
-                        <input type="password" class="textbox" id="txt_uname" name="txt_pwd" placeholder="Password"/>
-                    </div>
-                    <div>
-                        <input type="submit" value="Submit" name="but_submit" id="but_submit" />
-                    </div>
-                </div>
-            </form>
-        </div>
-        <form>
- <input type="button" value="Go back!" onclick="history.back()">
-</form>
-    </body>
-</html>
 
+if (isset($_POST['submit'])) {
+	$email = $_POST['email'];
+	$password = md5($_POST['password']);
+
+	$sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+	$result = mysqli_query($conn, $sql);
+	if ($result->num_rows > 0) {
+		$row = mysqli_fetch_assoc($result);
+		$_SESSION['username'] = $row['username'];
+	var_dump($_SESSION);
+	die();
+		header("Location: welcome.php");
+	} else {
+		echo "<script>alert('Woops! Email or Password is Wrong.')</script>";
+	}
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<title>Login Form - Pure Coding</title>
+
+
+</head>
+<body>
+
+	<div class="container">
+		<form action="" method="POST" class="login-email"> 
+			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Login</p>
+			<div class="input-group">
+				<input type="email" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+			</div>
+			<div class="input-group">
+				<input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
+			</div>
+			<div class="input-group">
+				<button id="login" name="submit" class="btn">Login</button>
+			</div>
+			<p class="login-register-text">Don't have an account? <a href="register.php">Register Here</a>.</p>
+		</form>
+	</div>
+	<script>
+$(document).ready(function(){
+	$("#login").click(function(){
+		alert("asd");
+	});
+	$.ajax({
+  url: "login.php", 
+  method:"POST"
+  data: {
+    zipcode: 97201
+  },
+  success: function( result ) {
+    $( "#weather-temp" ).html( "<strong>" + result + "</strong> degrees" );
+  }
+});
+
+
+});
+
+</script>
+</body>
+</html>

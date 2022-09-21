@@ -1,18 +1,14 @@
-<?php
+<?php 
 
-session_start();
+$server = "localhost";
+$user = "root";
+$pass = "Qwerter101010";
+$database = "data";
 
-$host = "localhost"; /* Host name */
-$user = "admin"; /* User */
-$password = "admin"; /* Password */
-$dbname = "phpdatabase"; /* Database name */
+$conn = mysqli_connect($server, $user, $pass, $database);
 
-$con = mysqli_connect($host, $user, $password,$dbname);
-// Check connection
-if (!$con) {
-        echo "Connection Error.";
+if (!$conn) {
+    die("<script>alert('Connection Failed.')</script>");
 }
-    else{
-        echo "Database Connection Successfully.";
-    }
+
 ?>
