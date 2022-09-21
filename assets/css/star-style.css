@@ -9,7 +9,8 @@
 }
 .rate:not(:checked) > input {
   position:absolute;
-  top:-9999px;
+ /* top:-9999px;*/
+ display: none;
 }
 .rate:not(:checked) > label {
   float:right;
@@ -37,5 +38,6 @@
 .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
 }
+
 
 
