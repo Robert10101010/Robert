@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="assets/css/registration.css">
     <link rel="stylesheet" href="assets/css/sidebar.css">
     <link rel="stylesheet" href="assets/css/star-style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/login.css">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta name="viewport" content="width=device-width, initial-scale=1">
   
@@ -31,7 +31,7 @@
                             <li class="scroll-to-section"><a href="#features">About</a></li>
                             <li class="scroll-to-section"><a href="#our-classes">Classes</a></li>
                             <li class="scroll-to-section"><a href="#contact-us">Contact</a></li> 
-                            <li class="scroll-to-section"><a target="blank" href='assets/php/registration.php'>Registration</a></li> 
+                            <li class="scroll-to-section"><a target="" href='assets/php/register.php'>Registration</a></li> 
                             <li class="scroll-to-section"><a href="#trainers">Trainers</a></li>
                         </ul>        
                         <a class='menu-trigger'>
@@ -77,7 +77,7 @@
     <li class="nav__items ">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 35.6">
         <use xlink:href="#planner"></use></svg>
-      <a onclick="location.href='assets/php/index.php'">Log in</a>
+      <a target="blank" href='assets/php/index.php'>Log in</a>
     </li> 
   </ul>
 </nav>
